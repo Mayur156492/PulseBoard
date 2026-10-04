@@ -1,0 +1,14 @@
+-- 001_baseline
+--
+-- Baseline marker for the PulseBoard schema.
+--
+-- The foundation milestone introduces no domain tables: services, metrics and
+-- incidents belong to later milestones. This file exists so the migration
+-- sequence is anchored, the migrations directory is tracked by git, and the
+-- runner has something to record on a fresh database.
+--
+-- Its checksum is recorded in schema_migrations, so this file must never be
+-- edited once applied - add 002_<name>.sql instead.
+--
+-- Note: the migration runner executes this file through Database.executeScript.
+-- It tolerates comment-only scripts, unlike node:sqlite's prepare().

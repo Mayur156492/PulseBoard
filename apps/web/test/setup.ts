@@ -1,0 +1,8 @@
+import { cleanup } from '@testing-library/react';
+import { afterEach } from 'vitest';
+
+// Vitest globals are disabled in this project, so React Testing Library cannot
+// register its own automatic cleanup.
+afterEach(() => {
+  cleanup();
+});

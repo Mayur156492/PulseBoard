@@ -1,0 +1,35 @@
+{
+  "name": "pulseboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PulseBoard - real-time observability and incident intelligence platform (monorepo root)",
+  "engines": {
+    "node": ">=24"
+  },
+  "workspaces": [
+    "packages/shared",
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "build": "npm run build:shared && npm run build -w @pulseboard/api && npm run build -w @pulseboard/web",
+    "build:shared": "npm run build -w @pulseboard/shared",
+    "dev": "npm run build:shared && concurrently -n api,web -c blue,green \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm run dev -w @pulseboard/api",
+    "dev:web": "npm run dev -w @pulseboard/web",
+    "start": "npm run start -w @pulseboard/api",
+    "typecheck": "npm run build:shared && npm run typecheck --workspaces",
+    "lint": "eslint .",
+    "test": "npm run build:shared && npm run test --workspaces",
+    "verify": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "clean": "node -e \"for (const p of ['packages/shared','apps/api','apps/web']) require('node:fs').rmSync(p + '/dist', { recursive: true, force: true })\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "concurrently": "^10.0.5",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.0"
+  }
+}

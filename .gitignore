@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Local environment files must never be committed.
+.env
+.env.*
+!.env.example
+
+# Local database files and their WAL/SHM siblings.
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+data/

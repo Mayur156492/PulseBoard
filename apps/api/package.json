@@ -1,0 +1,27 @@
+{
+  "name": "@pulseboard/api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PulseBoard HTTP API: boundary validation, health/readiness endpoints and the persistence foundation.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "dev": "tsx watch --env-file-if-exists=.env src/main.ts",
+    "start": "node --env-file-if-exists=.env dist/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "tsx": "^4.23.15",
+    "vitest": "^5.0.3"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.3.0",
+    "@pulseboard/shared": "^0.1.0",
+    "fastify": "^5.12.5"
+  }
+}

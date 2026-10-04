@@ -1,0 +1,79 @@
+:root {
+  --surface: #0f1115;
+  --surface-raised: #171a21;
+  --border: #262b36;
+  --text: #e6e8ee;
+  --text-muted: #9aa3b2;
+  --accent: #6ea8fe;
+  --danger: #ff6b6b;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+}
+
+section {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+section p {
+  color: var(--text);
+}
+
+section [data-testid="health-state"] {
+  margin: 0;
+}
+
+section strong {
+  color: var(--accent);
+}
+
+[role="alert"] {
+  color: var(--danger);
+}
+
+ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+}
+
+li + li {
+  margin-top: 0.25rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
