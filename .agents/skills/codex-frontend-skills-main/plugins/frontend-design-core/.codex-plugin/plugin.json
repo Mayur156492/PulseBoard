@@ -1,0 +1,38 @@
+{
+    "name":  "frontend-design-core",
+    "version":  "0.1.0",
+    "description":  "Frontend Design Core provides compact Codex skills for high-quality interface design, product UI engineering, and UX review without loading the old monolithic frontend bundle.",
+    "author":  {
+                   "name":  "Local developer"
+               },
+    "skills":  "./skills/",
+    "keywords":  [
+                     "frontend",
+                     "design",
+                     "ui",
+                     "ux",
+                     "accessibility"
+                 ],
+    "interface":  {
+                      "displayName":  "Frontend Design Core",
+                      "shortDescription":  "Lean skills for polished frontend design and UI quality.",
+                      "longDescription":  "Frontend Design Core provides compact Codex skills for high-quality interface design, product UI engineering, and UX review without loading the old monolithic frontend bundle.",
+                      "developerName":  "Local developer",
+                      "category":  "Productivity",
+                      "capabilities":  [
+                                           "Frontend",
+                                           "Design",
+                                           "UX",
+                                           "Accessibility"
+                                       ],
+                      "websiteURL":  "https://claudemarketplaces.com/skills/category/design-ui",
+                      "privacyPolicyURL":  "https://claudemarketplaces.com/privacy",
+                      "termsOfServiceURL":  "https://claudemarketplaces.com/about",
+                      "defaultPrompt":  [
+                                            "Design a production-grade frontend screen.",
+                                            "Review this UI for quality and accessibility.",
+                                            "Improve this interface without generic AI styling."
+                                        ],
+                      "brandColor":  "#2563EB"
+                  }
+}

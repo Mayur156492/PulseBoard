@@ -1,0 +1,39 @@
+{
+    "name":  "frontend-3d-motion",
+    "version":  "0.1.0",
+    "description":  "Focused frontend 3D and motion skills.",
+    "author":  {
+                   "name":  "Local developer"
+               },
+    "skills":  "./skills/",
+    "keywords":  [
+                     "three-js",
+                     "webgpu",
+                     "webgl",
+                     "r3f",
+                     "framer-motion",
+                     "animation"
+                 ],
+    "interface":  {
+                      "displayName":  "Frontend 3D Motion",
+                      "shortDescription":  "Three.js, R3F, WebGPU, and motion guidance.",
+                      "longDescription":  "Small Codex plugin for Three.js, R3F, WebGPU, GLTF, and UI motion.",
+                      "developerName":  "Local developer",
+                      "category":  "Productivity",
+                      "capabilities":  [
+                                           "Three.js",
+                                           "R3F",
+                                           "WebGL",
+                                           "Motion"
+                                       ],
+                      "websiteURL":  "https://threejs.org/docs/",
+                      "privacyPolicyURL":  "https://claudemarketplaces.com/privacy",
+                      "termsOfServiceURL":  "https://claudemarketplaces.com/about",
+                      "defaultPrompt":  [
+                                            "Build a Three.js scene.",
+                                            "Add a GLTF viewer.",
+                                            "Polish UI motion."
+                                        ],
+                      "brandColor":  "#EA580C"
+                  }
+}

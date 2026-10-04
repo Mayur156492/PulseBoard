@@ -1,0 +1,15 @@
+.plugin-eval/
+.tmp/
+node_modules/
+*.log
+*.tmp
+*.bak
+__pycache__/
+*.pyc
+
+# Optional third-party archives fetched for local use.
+plugins/frontend-react-ui/skills/react-bits/assets/react-bits-main.zip
+
+# Local extraction/cache output.
+codex-ui-ux-pro-data/
+react-bits-main/

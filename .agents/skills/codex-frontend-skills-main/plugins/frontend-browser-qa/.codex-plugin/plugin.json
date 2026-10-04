@@ -1,0 +1,38 @@
+{
+    "name":  "frontend-browser-qa",
+    "version":  "0.1.0",
+    "description":  "Focused browser QA skills.",
+    "author":  {
+                   "name":  "Local developer"
+               },
+    "skills":  "./skills/",
+    "keywords":  [
+                     "browser",
+                     "playwright",
+                     "visual-qa",
+                     "responsive",
+                     "debugging"
+                 ],
+    "interface":  {
+                      "displayName":  "Frontend Browser QA",
+                      "shortDescription":  "Browser, Playwright, responsive, and visual QA.",
+                      "longDescription":  "Small Codex plugin for browser automation, screenshots, responsive checks, and frontend debugging.",
+                      "developerName":  "Local developer",
+                      "category":  "Productivity",
+                      "capabilities":  [
+                                           "Browser QA",
+                                           "Playwright",
+                                           "Visual QA",
+                                           "Debugging"
+                                       ],
+                      "websiteURL":  "https://claudemarketplaces.com/skills/category/frontend",
+                      "privacyPolicyURL":  "https://claudemarketplaces.com/privacy",
+                      "termsOfServiceURL":  "https://claudemarketplaces.com/about",
+                      "defaultPrompt":  [
+                                            "Audit this UI.",
+                                            "Verify this route.",
+                                            "Debug the interaction."
+                                        ],
+                      "brandColor":  "#0891B2"
+                  }
+}

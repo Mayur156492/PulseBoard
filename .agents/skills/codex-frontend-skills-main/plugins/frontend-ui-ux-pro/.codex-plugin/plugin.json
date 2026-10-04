@@ -1,0 +1,42 @@
+{
+    "name":  "frontend-ui-ux-pro",
+    "version":  "0.1.0",
+    "description":  "Frontend UI/UX Pro bundles the full UI/UX Pro Max local design database for product design systems, UX audits, accessibility checks, visual polish, and stack-specific frontend guidance without requiring user-installed Python.",
+    "author":  {
+                   "name":  "Local developer"
+               },
+    "skills":  "./skills/",
+    "interface":  {
+                      "displayName":  "Frontend UI/UX Pro",
+                      "shortDescription":  "Full UI/UX Pro Max design intelligence with local database.",
+                      "longDescription":  "Frontend UI/UX Pro bundles UI/UX Pro Max as a dedicated personal plugin. It uses local CSV design data and a PowerShell wrapper that prefers Codex bundled Python, with a no-Python CSV fallback for design systems, UI audits, accessibility, typography, color, charts, and frontend stack guidance.",
+                      "developerName":  "Local developer",
+                      "category":  "Productivity",
+                      "capabilities":  [
+                                           "UI/UX",
+                                           "Design Systems",
+                                           "Accessibility",
+                                           "Visual Polish",
+                                           "Frontend Review"
+                                       ],
+                      "defaultPrompt":  [
+                                            "Create a UI/UX design system for this product.",
+                                            "Audit this interface for UX, accessibility, and polish.",
+                                            "Improve this screen using UI/UX Pro Max guidance."
+                                        ],
+                      "websiteURL":  "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+                      "privacyPolicyURL":  "https://claudemarketplaces.com/privacy",
+                      "termsOfServiceURL":  "https://claudemarketplaces.com/about",
+                      "brandColor":  "#0F766E"
+                  },
+    "keywords":  [
+                     "frontend",
+                     "ui",
+                     "ux",
+                     "design-system",
+                     "accessibility",
+                     "visual-polish",
+                     "ui-ux-pro-max",
+                     "audit"
+                 ]
+}

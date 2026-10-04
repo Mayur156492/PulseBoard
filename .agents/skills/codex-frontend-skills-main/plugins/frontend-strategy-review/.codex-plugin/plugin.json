@@ -1,0 +1,21 @@
+{
+  "name": "frontend-strategy-review",
+  "version": "0.1.0",
+  "description": "Senior frontend architecture, review, performance, accessibility, React composition, and design brainstorming skills.",
+  "author": { "name": "Local developer" },
+  "skills": "./skills/",
+  "keywords": ["frontend", "architecture", "review", "performance", "accessibility", "react", "design"],
+  "interface": {
+    "displayName": "Frontend Strategy Review",
+    "shortDescription": "Senior frontend architecture, review, perf, a11y, and design thinking.",
+    "longDescription": "Compact Codex plugin for senior frontend judgment before and after implementation.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": ["Architecture", "Code Review", "Performance", "Accessibility", "Design"],
+    "websiteURL": "https://claudemarketplaces.com/skills/category/frontend",
+    "privacyPolicyURL": "https://claudemarketplaces.com/privacy",
+    "termsOfServiceURL": "https://claudemarketplaces.com/about",
+    "defaultPrompt": ["Review this frontend architecture.", "Review this React change.", "Brainstorm design directions."],
+    "brandColor": "#2563EB"
+  }
+}

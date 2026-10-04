@@ -1,0 +1,92 @@
+{
+  "name": "codex-frontend-skills",
+  "interface": {
+    "displayName": "Codex Frontend Skills"
+  },
+  "plugins": [
+    {
+      "name": "frontend-design-core",
+      "source": {
+        "source": "local",
+        "path": "./plugins/frontend-design-core"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "frontend-prototypes",
+      "source": {
+        "source": "local",
+        "path": "./plugins/frontend-prototypes"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "frontend-react-ui",
+      "source": {
+        "source": "local",
+        "path": "./plugins/frontend-react-ui"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "frontend-3d-motion",
+      "source": {
+        "source": "local",
+        "path": "./plugins/frontend-3d-motion"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "frontend-browser-qa",
+      "source": {
+        "source": "local",
+        "path": "./plugins/frontend-browser-qa"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "frontend-strategy-review",
+      "source": {
+        "source": "local",
+        "path": "./plugins/frontend-strategy-review"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "frontend-ui-ux-pro",
+      "source": {
+        "source": "local",
+        "path": "./plugins/frontend-ui-ux-pro"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+    "name":  "frontend-prototypes",
+    "version":  "0.1.0",
+    "description":  "Focused frontend prototype skills.",
+    "author":  {
+                   "name":  "Local developer"
+               },
+    "skills":  "./skills/",
+    "keywords":  [
+                     "prototype",
+                     "dashboard",
+                     "mobile",
+                     "wireframe",
+                     "web"
+                 ],
+    "interface":  {
+                      "displayName":  "Frontend Prototypes",
+                      "shortDescription":  "Web, dashboard, mobile, editorial, and wireframe prototypes.",
+                      "longDescription":  "Small Codex plugin for focused frontend prototypes.",
+                      "developerName":  "Local developer",
+                      "category":  "Productivity",
+                      "capabilities":  [
+                                           "Prototype",
+                                           "Dashboard",
+                                           "Mobile",
+                                           "Wireframe"
+                                       ],
+                      "websiteURL":  "https://claudemarketplaces.com/skills/category/frontend",
+                      "privacyPolicyURL":  "https://claudemarketplaces.com/privacy",
+                      "termsOfServiceURL":  "https://claudemarketplaces.com/about",
+                      "defaultPrompt":  [
+                                            "Create a dashboard prototype.",
+                                            "Sketch a mobile screen.",
+                                            "Build a web prototype."
+                                        ],
+                      "brandColor":  "#0F766E"
+                  }
+}

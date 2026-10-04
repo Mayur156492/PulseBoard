@@ -1,0 +1,4 @@
+interface:
+  display_name: "React Bits"
+  short_description: "Select polished React Bits components without importing the whole repo."
+  default_prompt: "Use React Bits to improve this React UI with subtle, production-friendly motion."

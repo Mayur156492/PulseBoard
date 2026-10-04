@@ -1,0 +1,40 @@
+{
+    "name":  "frontend-react-ui",
+    "version":  "0.1.0",
+    "description":  "React UI, shadcn, Magic UI, agent UI, and component craft skills.",
+    "author":  {
+                   "name":  "Local developer"
+               },
+    "skills":  "./skills/",
+    "keywords":  [
+                     "react",
+                     "shadcn",
+                     "magic-ui",
+                     "agent-ui",
+                     "components",
+                     "motion"
+                 ],
+    "interface":  {
+                      "displayName":  "Frontend React UI",
+                      "shortDescription":  "React UI, shadcn, Magic UI, and agent components.",
+                      "longDescription":  "Focused React UI plugin for component craft, shadcn registries, Magic UI motion, Agent/AI Elements, and React Bits.",
+                      "developerName":  "Local developer",
+                      "category":  "Productivity",
+                      "capabilities":  [
+                                           "React",
+                                           "shadcn",
+                                           "Components",
+                                           "Agent UI",
+                                           "Motion"
+                                       ],
+                      "websiteURL":  "https://claudemarketplaces.com/skills/category/frontend",
+                      "privacyPolicyURL":  "https://claudemarketplaces.com/privacy",
+                      "termsOfServiceURL":  "https://claudemarketplaces.com/about",
+                      "defaultPrompt":  [
+                                            "Build a React UI.",
+                                            "Choose the right component registry.",
+                                            "Polish this button/form/screen."
+                                        ],
+                      "brandColor":  "#7C3AED"
+                  }
+}
