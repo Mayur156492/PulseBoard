@@ -65,7 +65,17 @@ export interface RunMigrationsOptions {
 
 /** Reads and validates every migration file in `directory`. */
 export async function loadMigrations(directory: string): Promise<readonly Migration[]> {
-  const entries = await readdir(directory);
+  let entries: readonly string[];
+  try {
+    entries = await readdir(directory);
+  } catch (error) {
+    // Surface filesystem failures through the same error type as malformed
+    // migrations, so callers that catch MigrationError see a consistent shape.
+    // We do replay the underlying code so diagnostics are still actionable.
+    throw new MigrationError(
+      `Cannot read migrations directory "${directory}": ${error instanceof Error ? error.message : String(error)}`,
+    );
+  }
 
   const migrations: Migration[] = [];
   const seenVersions = new Set<string>();

@@ -98,6 +98,13 @@ describe('migration loading', () => {
 
     await expect(loadMigrations(directory)).rejects.toThrow(/Duplicate migration version "001"/);
   });
+
+  it('throws MigrationError when the directory does not exist', async () => {
+    const missing = join(tmpdir(), `pulseboard-missing-${Date.now()}`);
+
+    await expect(loadMigrations(missing)).rejects.toThrow(MigrationError);
+    await expect(loadMigrations(missing)).rejects.toThrow(/Cannot read migrations directory/);
+  });
 });
 
 describe('runMigrations', () => {
