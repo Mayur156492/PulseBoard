@@ -61,7 +61,7 @@ describe('isApiErrorResponse', () => {
 
 describe('API_ERROR_CODES', () => {
   it('exposes exactly the codes the foundation can emit', () => {
-    expect([...API_ERROR_CODES]).toEqual(['VALIDATION_ERROR', 'NOT_FOUND', 'INTERNAL_ERROR']);
+    expect([...API_ERROR_CODES]).toEqual(['VALIDATION_ERROR', 'NOT_FOUND', 'INTERNAL_ERROR', 'SERVICE_EXISTS']);
   });
 
   it('contains no duplicates', () => {

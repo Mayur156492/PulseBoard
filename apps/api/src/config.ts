@@ -177,7 +177,15 @@ function readOrigins(env: NodeJS.ProcessEnv, issues: string[]): readonly string[
  * Resolved relative to this module so it works identically when executed from
  * `src/` (tsx, tests) and from `dist/` (production build).
  */
-export function readPackageVersion(): string {
+export function readPackageVersion(env?: NodeJS.ProcessEnv): string {
+  if (!env) {
+    env = process.env;
+  }
+  const version = env['VERSION'];
+  if (version && typeof version === 'string') {
+    return version;
+  }
+
   const packageJsonPath = new URL('../package.json', import.meta.url);
 
   let parsed: unknown;

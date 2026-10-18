@@ -10,6 +10,8 @@ import type { ApiConfig } from './config.js';
 import type { MigrationStatus } from './db/migrations.js';
 import { registerErrorHandling } from './http/error-handler.js';
 import { registerHealthRoutes } from './http/health.js';
+import { registerServiceRoutes } from './http/services.js';
+import { registerMeasurementRoutes } from './http/measurement-routes.js';
 import type { Clock, Database } from './ports.js';
 import { buildServerOptions } from './server-options.js';
 
@@ -54,6 +56,18 @@ export function buildApp(dependencies: BuildAppDependencies): FastifyInstance {
     version: config.version,
     startedAt,
     readMigrationStatus,
+  });
+
+  registerServiceRoutes(app, {
+    database,
+    clock,
+    config,
+  });
+
+  registerMeasurementRoutes(app, {
+    database,
+    clock,
+    config,
   });
 
   return app;

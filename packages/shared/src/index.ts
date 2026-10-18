@@ -6,8 +6,7 @@
  * business logic (pulseboard-architecture rule 1: the UI never accesses the
  * database directly, and the shared package is part of the UI's dependency
  * surface).
- */
-export {
+ */export {
   isHealthReport,
   type HealthCheckReport,
   type HealthReport,
@@ -25,3 +24,19 @@ export {
   toServerTimestamp,
   type ServerTimestamp,
 } from './time.js';
+export type {
+  ServiceRegistrationRequest,
+  ServiceRegistrationResponse,
+  ServiceListResponse,
+  HeartbeatRequest,
+  ServiceHeartbeatResponse,
+  ServiceStatus,
+  ServiceDetailResponse,
+} from './service-contracts.js';
+export type {
+  MeasurementCreateRequest,
+  MeasurementResponse,
+  MeasurementListQuery,
+  MeasurementListResponse,
+  MeasurementCursor,
+} from './measurement-contracts.js';

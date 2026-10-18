@@ -11,7 +11,7 @@
  * Kept deliberately small: codes are a public contract, so a new code is added
  * only when an endpoint actually needs it.
  */
-export const API_ERROR_CODES = ['VALIDATION_ERROR', 'NOT_FOUND', 'INTERNAL_ERROR'] as const;
+export const API_ERROR_CODES = ['VALIDATION_ERROR', 'NOT_FOUND', 'INTERNAL_ERROR', 'SERVICE_EXISTS'] as const;
 
 export type ApiErrorCode = (typeof API_ERROR_CODES)[number];
 
@@ -56,7 +56,7 @@ export function isApiErrorResponse(value: unknown): value is ApiErrorResponse {
 
   const candidate = error as Record<string, unknown>;
   if (typeof candidate['code'] !== 'string') return false;
-  if (!(API_ERROR_CODES as readonly string[]).includes(candidate['code'])) return false;
+  if (!(API_ERROR_CODES as readonly string[]).includes(candidate['code'] as ApiErrorCode)) return false;
   if (typeof candidate['message'] !== 'string') return false;
   if (typeof candidate['requestId'] !== 'string') return false;
 

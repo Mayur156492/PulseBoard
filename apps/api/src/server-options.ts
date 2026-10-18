@@ -23,6 +23,12 @@ export function buildServerOptions(config: ApiConfig): FastifyServerOptions {
         // Query-string routes that need coercion must opt in explicitly in the
         // milestone that introduces them.
         coerceTypes: false,
+        // Do not silently strip unknown properties. With `additionalProperties: false`
+        // on a body schema, `removeAdditional: true` (Fastify's default) would remove
+        // unknown fields from the request body without rejecting the request. Setting
+        // this to false lets AJV surface a validation error so the error handler can
+        // return a proper 400 VALIDATION_ERROR instead of accepting a stripped body.
+        removeAdditional: false,
       },
     },
     logger: {
