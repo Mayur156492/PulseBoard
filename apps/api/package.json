@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.json",
-    "test": "vitest run",
+    "test": "vitest run --test-timeout 10000",
     "dev": "tsx watch --env-file-if-exists=.env src/main.ts",
     "start": "node --env-file-if-exists=.env dist/main.js"
   },

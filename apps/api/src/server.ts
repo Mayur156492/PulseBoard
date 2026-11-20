@@ -9,6 +9,12 @@ import {
   runMigrations,
 } from './db/migrations.js';
 import { SqliteDatabase } from './db/sqlite-database.js';
+import { systemClock } from './clock.js';
+import {
+  createIncidentSchedulerState,
+  createIncidentScheduler,
+} from './wiring/incident-wiring.js';
+
 
 export interface ShutdownController {
   /** Resolves once a termination signal has been received. */
@@ -105,6 +111,8 @@ export async function main(): Promise<void> {
 
   let app: FastifyInstance | undefined;
   let shutdown: ShutdownController | undefined;
+  let incidentScheduler: ReturnType<typeof createIncidentScheduler> | undefined;
+
 
   try {
     const migrations = await loadMigrations(DEFAULT_MIGRATIONS_DIR);
@@ -125,7 +133,27 @@ export async function main(): Promise<void> {
       app.log.warn('Automatic migrations are disabled; verify the schema before serving traffic');
     }
 
+    const incidentSchedulerState = createIncidentSchedulerState();
+    incidentScheduler = createIncidentScheduler(
+      database,
+      systemClock,
+      {
+        staleThresholdMs: 30_000,
+        tickIntervalMs: 15_000,
+        incidentType: 'SERVICE_STALE',
+      },
+      incidentSchedulerState,
+      (_timerId) => {
+        // timer armed
+      },
+      () => {
+        // timer cancelled
+      },
+    );
+
     shutdown = registerShutdownHandlers(app, config.shutdownTimeoutMs);
+
+    await incidentScheduler.start();
 
     await app.listen({ host: config.host, port: config.port });
     app.log.info(
@@ -134,6 +162,9 @@ export async function main(): Promise<void> {
     );
 
     await shutdown.signalsReceived;
+
+    // Stop scheduling new incident evaluations before closing the HTTP server.
+    await incidentScheduler.stop();
   } finally {
     // Single, unconditional cleanup path: whichever step failed, the listener
     // and the database handle are released exactly once.

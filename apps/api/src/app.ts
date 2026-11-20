@@ -12,6 +12,7 @@ import { registerErrorHandling } from './http/error-handler.js';
 import { registerHealthRoutes } from './http/health.js';
 import { registerServiceRoutes } from './http/services.js';
 import { registerMeasurementRoutes } from './http/measurement-routes.js';
+import { registerIncidentRoutes } from './http/incident-routes.js';
 import type { Clock, Database } from './ports.js';
 import { buildServerOptions } from './server-options.js';
 
@@ -65,6 +66,12 @@ export function buildApp(dependencies: BuildAppDependencies): FastifyInstance {
   });
 
   registerMeasurementRoutes(app, {
+    database,
+    clock,
+    config,
+  });
+
+  registerIncidentRoutes(app, {
     database,
     clock,
     config,

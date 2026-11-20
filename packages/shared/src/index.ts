@@ -40,3 +40,16 @@ export type {
   MeasurementListResponse,
   MeasurementCursor,
 } from './measurement-contracts.js';
+export type {
+  IncidentResponse,
+  IncidentListQuery,
+  IncidentListResponse,
+  IncidentCursor,
+  IncidentStatus,
+  IncidentType,
+} from './incident-contracts.js';
+export {
+  isValidIncidentId,
+  INCIDENT_ID_PATTERN,
+  INCIDENT_ID_PATTERN_SOURCE,
+} from './incident-id.js';

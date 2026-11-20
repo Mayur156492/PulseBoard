@@ -30,6 +30,14 @@ export interface ServiceHeartbeatResponse {
 
 export type ServiceStatus = 'healthy' | 'stale' | 'unknown';
 
+/**
+ * Regex source used to validate service id identifiers.
+ *
+ * Exported so other packages can reuse the exact same grammar without duplicating
+ * the pattern literal.
+ */
+export const SERVICE_ID_PATTERN_SOURCE = /^[A-Za-z0-9_-]{21}$/.source;
+
 export interface ServiceDetailResponse {
   readonly service: ServiceRegistrationResponse;
   readonly latestHeartbeat?: {

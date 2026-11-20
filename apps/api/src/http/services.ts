@@ -8,6 +8,7 @@ import {
   recordHeartbeat,
   getServiceDetail,
 } from '../services/service-repository.js';
+import type { IncidentSchedulerHandle } from '../wiring/incident-wiring.js';
 import { SERVICE_ID_PATTERN } from '../services/id-generation.js';
 import type {
   ServiceDetailResponse,
@@ -18,6 +19,7 @@ export interface ServiceRouteDependencies {
   readonly database: Database;
   readonly clock: Clock;
   readonly config: ApiConfig;
+  readonly incidentScheduler?: IncidentSchedulerHandle;
 }
 
 export function registerServiceRoutes(app: FastifyInstance, deps: ServiceRouteDependencies): void {
@@ -90,7 +92,7 @@ export function registerServiceRoutes(app: FastifyInstance, deps: ServiceRouteDe
     },
   );
 
-  // POST /services/:serviceId/heartbeats - Ingest a heartbeat
+  // POST /services/:serviceId/heartbeats - Ingest a heartbeat (unchanged response contract)
   app.post(
     '/services/:serviceId/heartbeats',
     {
@@ -167,7 +169,21 @@ export function registerServiceRoutes(app: FastifyInstance, deps: ServiceRouteDe
       }
 
       const result = await recordHeartbeat(database, clock, serviceId, clientTs);
+
+      if (deps.incidentScheduler && typeof deps.incidentScheduler.scheduleService === 'function') {
+        try {
+          deps.incidentScheduler.scheduleService(serviceId);
+        } catch (scheduleError) {
+          console.error(
+            '[heartbeat] failed to schedule incident evaluation for service %s:',
+            serviceId,
+            scheduleError instanceof Error ? scheduleError.message : String(scheduleError),
+          );
+        }
+      }
+
       return reply.code(200).send(result);
+
     },
   );
 

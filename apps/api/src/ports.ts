@@ -45,3 +45,14 @@ export interface Database {
    */
   close(): Promise<void>;
 }
+
+/**
+ * Optional synchronous query access used by the incident scheduler periodic
+ * sweep. Not all database adapters need to implement this; the incident
+ * scheduler degrades gracefully when it is absent.
+ */
+export interface DatabaseQuerySyncExtension {
+  querySync<T>(sql: string, params?: readonly unknown[]): T[];
+}
+
+
